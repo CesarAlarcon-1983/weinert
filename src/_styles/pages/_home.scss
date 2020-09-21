@@ -203,10 +203,18 @@
 
       .slick-prev {
         left: -10px;
+
+        @include mq(md) {
+          left: -25px;
+        }
       }
 
       .slick-next {
         right: -10px;
+
+        @include mq(md) {
+          right: -25px;
+        }
       }
 
       .slick-list {
@@ -409,10 +417,18 @@
 
       .slick-prev {
         left: -10px;
+
+        @include mq(md) {
+          left: -25px;
+        }
       }
 
       .slick-next {
         right: -10px;
+
+        @include mq(md) {
+          right: -25px;
+        }
       }
 
 
@@ -440,7 +456,7 @@
     }
 
     &__top-destacado {
-      height: 41vh;
+      height: 45vh;
       background: $midBeige;
       position: relative;
       overflow: hidden;
@@ -449,15 +465,15 @@
         position: absolute;
         top: 0;
         left: 0;
-        width: 100%;        
+        height: 100%;
       }
 
       &--left {
-        margin-right: 20px;
+        margin-right: 10px;
       }
 
       &--right {
-        margin-left: 20px;
+        margin-left: 10px;
       }
 
     }

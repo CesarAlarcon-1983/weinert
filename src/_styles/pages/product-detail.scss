@@ -292,11 +292,42 @@
 
         a {
             text-decoration: none;
+            display: flex;
+            align-items: flex-end;
+            height: 22px;
         }
 
         i {
             color: $darkGray;
             font-size: 20px;
+            height: 20px;
+        }
+
+        &--inverted {
+          a {
+            align-items: flex-start;
+          }
+
+          i{
+            font-size: 20px;
+            border-radius: 50%;
+            color: $white;
+            // background: $darkGray;
+            position: relative;
+
+            &:after {
+              position: absolute;
+              top: calc(50% + 1px);
+              left: calc(50%);
+              transform: translate3d(-50%, -50%, 0);
+              content: '';
+              width: 10px;
+              height: 18px;
+              border-radius: 50%;
+              background: $darkGray;
+              z-index: -1;
+            }
+          }          
         }
     }
 
