@@ -1,0 +1,91 @@
+.privacy {
+    background: $lightBeige;
+    padding: 40px 0;
+
+    @include mq(md) {
+        padding: 80px 0;
+    }
+
+    &__title {
+        font-family: $titleFont;
+        font-weight: 100;
+        color: $darkGray;
+        margin: 0;
+        margin-bottom: 40px;
+        text-transform: uppercase;
+    }
+
+    &__accordion-item {
+        @include trans;
+
+        padding: 40px 0;
+        border-top: 1px solid $lightGray;
+        cursor: pointer;
+        
+        &:last-child {
+            border-bottom: 1px solid $lightGray;
+        }
+
+        &.-open {
+            .privacy__accordion-item__wrapper {
+                opacity: 1;
+                overflow: visible;
+                max-height: 20000px;
+                padding-top: 20px;
+
+            }
+
+            .privacy__accordion-item__text {
+                opacity: 1;
+                overflow: visible;
+                max-height: 1000px;
+            }
+        }
+
+
+        &__title {
+            text-transform: uppercase;
+            position: relative;
+            color: $darkGray;
+            width: 100%;
+            margin: 0;
+            font-weight: 100;
+            font-size: 18px;
+            padding-right: 80px;
+
+            &:after {
+                content: '';
+                position: absolute;
+                top: calc(50% - 3px);
+                transform: translateY(-50%) rotate(45deg);
+                right: 2px;
+                height: 10px;
+                width: 10px;
+                border-right: 2px solid $darkBeige;
+                border-bottom: 2px solid $darkBeige;
+            }
+        }
+
+        &__wrapper {
+            @include trans;
+
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            padding-top: 0;
+        }
+
+        &__text {
+            @include trans;
+
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            color: $darkGray;
+
+            &:not(:last-child) {
+                margin-bottom: 20px;
+            }
+        }
+    }
+}

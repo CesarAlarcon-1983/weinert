@@ -1,0 +1,112 @@
+extends ../_layouts/base
+
+include ../_modules/slider/slider
+include ../_modules/quantity-selector/quantity-selector
+
+block config
+  //- Correct base url pathing for this page
+  - var baseUrl = '../';
+
+block content
+  main.product-detail
+    div.product-detail__container
+      div.product-detail__product-content
+        +slider('product-detail__product-slider', 'normal')
+          div.product-detail__product-slide
+            span.product-detail__product-comment Home | Carrascal Corte clásico 2017 6X750ML
+            img(src="/images/producto/prod-7.png")
+          div.product-detail__product-slide
+            span.product-detail__product-comment Home | Carrascal Chardonnay 6X750ML
+            img(src="/images/home/linha-carrascal-3.png")
+        div.product-detail__product-description
+          h1.product-detail__product-description__title Carrascal Corte clásico 2017
+          span.product-detail__product-description__qty 6 X 750 ML
+          div.product-detail__product-price-wrapper
+            div.product-detail__product-price $3.360
+            div.product-detail__product-price $4.200
+          div.product-detail__product-rate
+            div.product-detail__product-stars
+              div.product-detail__product-star-wrapper  
+                i.far.fa-star.-js-star-outline
+                i.fas.fa-star.-js-star-filled
+              div.product-detail__product-star-wrapper
+                i.far.fa-star.-js-star-outline
+                i.fas.fa-star.-js-star-filled
+              div.product-detail__product-star-wrapper
+                i.far.fa-star.-js-star-outline
+                i.fas.fa-star.-js-star-filled
+              div.product-detail__product-star-wrapper
+                i.far.fa-star.-js-star-outline
+                i.fas.fa-star.-js-star-filled
+              div.product-detail__product-star-wrapper
+                i.far.fa-star.-js-star-outline
+                i.fas.fa-star.-js-star-filled
+            div.product-detail__product-opinion 20 opini&otilde;es
+          div.product-detail__product-controls
+            +quantity-selector()
+            div.product-detail__product-favorite
+              button.product-detail__add-to-cart
+                span adicionar
+                i.fas.fa-shopping-bag
+              button.product-detail__favorite
+                i.fa.fa-heart
+          p.product-detail__product-description-text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          ul.product-detail__social
+            li.product-detail__item
+              a(href="#")
+                i.fab.fa-facebook-f
+            li.product-detail__item
+              a(href="#")
+                i.fab.fa-twitter
+            li.product-detail__item
+              a(href="#")
+                i.fab.fa-whatsapp
+
+      div.product-detail__product-info
+        div.product-detail__product-info__wrapper
+          div.product-detail__product-info__tabs
+            span.product-detail__product-info__tab(data-target="details") Detalhes
+            span.product-detail__product-info__tab(data-target="info") Mais informação
+            span.product-detail__product-info__tab(data-target="opinion") Opini&otilde;es
+          div.product-detail__product-info__content-wrapper
+            div.product-detail__product-info__content(data-content="details")
+              div.product-detail__product-info__group
+                div.product-detail__product-info__icon
+                  img(src="/images/producto/icon-1.png")
+                div.product-detail__product-info__text-wrapper
+                  h3.product-detail__product-info__title Tempo em tonel
+                  p.product-detail__product-info__text 2 a 3 anos
+              div.product-detail__product-info__group
+                div.product-detail__product-info__icon
+                  img(src="/images/producto/icon-4.png")
+                div.product-detail__product-info__text-wrapper
+                  h3.product-detail__product-info__title Potencial de envelhecimento
+                  p.product-detail__product-info__text ideal para beber agora ou guardar áte 2023
+              div.product-detail__product-info__group
+                div.product-detail__product-info__icon
+                  img(src="/images/producto/icon-2.png")
+                div.product-detail__product-info__text-wrapper
+                  h3.product-detail__product-info__title Varietais
+                  p.product-detail__product-info__text Blend
+              div.product-detail__product-info__group
+                div.product-detail__product-info__icon
+                  img(src="/images/producto/icon-5.png")
+                div.product-detail__product-info__text-wrapper
+                  h3.product-detail__product-info__title Pontos
+                  p.product-detail__product-info__text 91 pontos
+              div.product-detail__product-info__group
+                div.product-detail__product-info__icon
+                  img(src="/images/producto/icon-3.png")
+                div.product-detail__product-info__text-wrapper
+                  h3.product-detail__product-info__title Tipo de vinho
+                  p.product-detail__product-info__text tinto
+              div.product-detail__product-info__group
+                div.product-detail__product-info__icon
+                  img(src="/images/producto/icon-6.png")
+                div.product-detail__product-info__text-wrapper
+                  h3.product-detail__product-info__title Harmonizaç&atilde;o
+                  p.product-detail__product-info__text Pizzas e Massas
+            div.product-detail__product-info__content(data-content="info")
+              p Agregar Contenido
+            div.product-detail__product-info__content(data-content="opinion")
+              p Agregar Mas Contenido

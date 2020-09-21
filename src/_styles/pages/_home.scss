@@ -1,3 +1,564 @@
 .home {
+  overflow: hidden;
+
+  &__hero {
+    &__slider,
+    &__slide {
+      height: 70vh;
+      margin-bottom: -0px !important;
+
+      @include mq(md) {
+        height: 41vh;
+      }
+    }
+
+    .slick-dots {
+      bottom: 10px;
+
+      li {
+        button {
+          &:before {
+            font-size: 8px;
+          }
+        }
+      }
+
+      .slick-active {
+        button {
+          &:before {
+            color: $darkBeige;
+            font-size: 8px;
+          }
+        }
+      }
+    }
+
+    .slick-prev,
+    .slick-next {
+      display: none !important;
+    }
+
+    &__slide-image {
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    &__content {
+      display: none;
+      background: $lightBeige;
+      padding: 40px 0;
+
+      @include mq(md) {
+        padding: 80px 0;
+        display: block;
+      }
+    }
+
+    &__description {
+      margin-left: auto;
+      margin-right: auto;
+      letter-spacing: 1px;
+      color: $darkGray;
+
+      @include mq(md) {
+        width: 90%;
+      }
+    }
+
+    &__text {
+      text-align: center;
+      margin: 0;
+      margin-bottom: 40px;
+      
+      @include mq(md) {
+        font-size: 24px;
+        margin-bottom: 80px;
+        line-height: 1.6;
+      }
+    }
+
+    &__characteristic {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin-bottom: 40px;
+
+      @include mq(md) {
+        margin-bottom: 0;
+      }
+
+      &__icon {
+        height: 50px;
+        overflow: hidden;
+        width: auto;
+        margin-bottom: 20px;
+
+        img {
+          height: 100%;
+        }
+      }
+
+      &__title {
+        color: $darkBeige;
+        text-transform: uppercase;
+        text-align: center;
+        margin: 0;
+        margin-bottom: 5px;
+        font-weight: 500;
+      }
+
+      &__text  {
+        text-align: center;
+        margin: 0;
+        color: $darkGray;
+      }
+    }
+  }
+
+  &__destacados {
+    padding: 40px 0;
+
+    @include mq(md) {
+      padding: 80px 0;
+    }
+
+    &__main-destacados {
+      margin-bottom: 40px;
+
+      @include mq(md) {
+        margin-bottom: 80px;
+      }
+    }
+
+    &__heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 20px;
+
+      @include mq(md) {
+        margin-bottom: 40px;
+      }
+    }
+
+    &__title {
+      font-size: 30px;
+      margin: 0;
+      font-family: $titleFont;
+      font-weight: 100;
+      text-transform: uppercase;
+      color: $darkGray;
+
+      @include mq(md) {
+        font-size: 40px;
+      }
+    }
+
+    &__more {
+      margin: 0;
+      text-decoration: none;
+      font-size: 14px;
+      color: $darkGray;
+      text-transform: uppercase;
+      white-space: nowrap;
+
+      @include mq(md) {
+        font-size: 18px;
+      }
+    }
+
+    &__main-destacado-slider {
+      @include mq(md) {
+        // display: none;
+      }
+
+      .slick-slider {
+        margin-bottom: 0 !important;
+        height: 100%;
+      }
+
+      .slick-list,
+      .slick-track {
+        height: 100%;
+      }
+
+      .slick-prev,
+      .slick-next {
+        display: block !important;
+      }
+
+      .slick-list {
+        @include mq(md) {
+          margin: 0 -20px;
+        }
+      }
+
+      .slick-slide {
+        height: 100%;
+
+        @include mq(md) {
+          margin: 0 20px;
+        }
+
+        & > div {
+          height: 100%;
+        }
+      }
+
+      .slick-dots {
+        display: none !important;
+      }
+    }
+
+    &__main-slide {
+      height: 100%;
+    }
+
+    &__col {
+      display: none;
+
+      @include mq(md) {
+        display: block;
+      }
+    }
+
+    &__main-destacado {
+      background: $midBeige;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 20px 20px 40px 20px;
+      position: relative;
+      height: 100%;
+
+      @include mq(md) {
+      }
+    }
+
+    &__favorite {
+      position: absolute;
+      top: 20px; 
+      right: 20px;
+
+      i {
+        position: absolute;
+        top: 0; 
+        right: 0;
+        font-size: 30px;
+
+        @include mq(md) {
+          font-size: 35px;
+        }
+  
+        &.fa-heart {
+          color: $darkBeige;
+        }
+
+        &.fa-heart-o {
+          color: $midGray;
+        }
+        // position: absolute;
+      }
+    }
+
+    &__destacado-image {
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      overflow: hidden;
+      margin-bottom: 20px;
+      position: relative;
+      height: 0;
+      padding-bottom: 100%;
+
+      .-seal {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate3d(-50%, 0, 0);
+        width: 100%;
+        height: auto;
+      }
+
+      .-image1,
+      .-image2 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0);
+        width: 85%;
+        height: auto;
+      }
+
+      .-image2 {
+        width: 100%;
+      }
+    }
+
+    &__destacado-content {
+
+    }
+
+    &__destacado-title {
+      margin: 0;
+      margin-bottom: 5px;
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 26px;
+      color: $darkGray;
+      font-weight: 500;
+
+      @include mq(md) {
+        font-size: 30px;
+      }
+    }
+
+    &__destacado-prices {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      margin-bottom: 20px;
+    }
+
+    &__destacado-price {
+      color: $darkBeige;
+      font-size: 24px;
+      margin-right: 20px;
+    }
+
+    &__destacado-regular-price {
+      color: $darkGray;
+      font-size: 20px;
+      text-decoration-line: line-through;
+    }
+
+    &__destacado-button {
+      @include iconedButton('fill', $white, $darkGray);
+      // width: 70%;
+      // margin-right: auto;
+      // margin-left: auto;
+      // display: flex;
+      // justify-content: center;
+      // align-items: center;
+      // background: $white;
+      // border: none;
+      // padding: 15px 0;
+
+      // @include mq(md) {
+      //   width: 60%;
+      // }
+
+      // i {
+      //   color: $darkGray;
+      //   font-size: 18px;
+      // }
+    }
+
+    &__button-text {
+      text-transform: uppercase;
+      color: $darkGray;
+      margin-right: 20px;
+      font-size: 16px;
+      letter-spacing: 3px;
+
+      @include mq(md) {
+        font-size: 18px;
+      }
+    }
+
+    &__carrousel {
+      margin-bottom: 80px;
+
+      .slick-slider,
+      .slick-draggable,
+      .slick-list,
+      .slick-track {
+        height: 100%;
+      }
+
+      .slick-list {
+        margin: 0 -20px;
+      }
+
+      .slick-prev,
+      .slick-next {
+        display: block !important;
+      }
+
+      .slick-slide {
+        margin: 0 20px;
+        height: 100%;
+
+        & > div {
+          height: 100%;
+        }
+      }
+    }
+
+    &__slide {
+      height: 100%;
+    }
+
+    &__top-destacados {
+      margin-bottom: 80px;
+      display: none;
+
+      @include mq(md) {
+        display: block;
+      }
+    }
+
+    &__top-destacado {
+      height: 41vh;
+      background: $midBeige;
+      position: relative;
+      overflow: hidden;
+
+      .-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;        
+      }
+
+      &--left {
+        margin-right: 20px;
+      }
+
+      &--right {
+        margin-left: 20px;
+      }
+
+    }
     
+    &__top-destacado-content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__top-destacado-wrapper {
+      position: relative;
+      width: 100%;
+      margin-bottom: 60px;
+
+      .-underline {
+        position: absolute;
+        bottom: -20px;
+        right: 60px;
+        width: 30%;
+      }
+    }
+
+    &__top-destacado-subtitle {
+      margin: 0;
+      color: $white;
+      text-transform: uppercase;
+      text-align: center;
+      font-weight: 100;
+      font-size: 20px;
+    }
+
+    &__top-destacado-title {
+      margin: 0;
+      color: $white;
+      font-weight: 100;
+      transform: rotate(-5deg);
+      font-family: $altFont;
+      font-size: 60px;
+      text-align: center;
+    }
+
+    &__top-destacado-button {
+      background: transparent;
+      border: 1px solid $white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px 40px;
+      color: $white;
+      font-size: 30px;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+  }
+
+  &__interstitial {
+    height: 41vh;
+    position: relative;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+    }
+
+    &__content {
+      position: absolute;
+      left: 50%;
+      transform: translate3d(-50%, -50%, 0);
+      top: 50%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__wrapper {
+      margin-bottom: 80px;
+      position: relative;
+
+      img {
+        position: absolute;
+        bottom: -20px;
+        right: 70px;
+        width: 30%;
+      }
+    }
+
+    &__title {
+      font-family: $altFont;
+      color: $white;
+      font-size: 60px;
+      transform: rotate(-5deg);
+      margin: 0;
+      text-align: center;
+      font-weight: 100;
+      text-transform: capitalize;
+    }
+
+    &__button  {
+      @include trans;
+
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 15px 40px;
+      text-align: center;
+      color: $white;
+      border: 1px solid $white;
+      background: transparent;
+      text-transform: uppercase;
+      text-decoration: none;
+
+      &:hover  {
+        color: $darkBeige;
+        border: 1px solid $darkBeige;
+      }
+
+      @include mq(md) {
+        font-size: 26px;
+      }
+    }
+  }
 }

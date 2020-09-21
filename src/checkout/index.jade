@@ -1,0 +1,129 @@
+extends ../_layouts/base
+
+include ../_modules/cart-product/cart-product
+
+block config
+  //- Correct base url pathing for this page
+  - var baseUrl = '../';
+
+block content
+  main.checkout
+    form.checkout__form
+      .container
+        .row
+          .col-24.col-md-12
+            .row
+              .col-24
+                h2.checkout__form-title Preencha seus dados
+                div.checkout__form-group.checkout__form-group--xl
+                  input.checkout__form-input(placeholder="Seu email *")
+                  label.checkout__form-label Seu email *
+              .col-24
+                h2.checkout__form-title Informaç&atilde;o de entrega
+              .col-24.col-md-12
+                div.checkout__form-group
+                  input.checkout__form-input(placeholder="Nome *")
+                  label.checkout__form-label Nome *
+              .col-24.col-md-12
+                div.checkout__form-group
+                  input.checkout__form-input(placeholder="Sobrenome *")
+                  label.checkout__form-label Sobrenome *
+              .col-24.col-md-12
+                div.checkout__form-group
+                  input.checkout__form-input(placeholder="CPF *")
+                  label.checkout__form-label CPF *
+              .col-24.col-md-12
+                div.checkout__form-group
+                  input.checkout__form-input(placeholder="Telefone *")
+                  label.checkout__form-label Telefone *
+              .col-24.col-md-12
+                div.checkout__form-group
+                  input.checkout__form-input(placeholder="Rua *")
+                  label.checkout__form-label Rua *
+              .col-24.col-md-12
+                div.checkout__form-group
+                  input.checkout__form-input(placeholder="Número *")
+                  label.checkout__form-label Número *
+              .col-24.col-md-12
+                div.checkout__form-group
+                  input.checkout__form-input(placeholder="Andar")
+                  label.checkout__form-label Andar
+              .col-24.col-md-12
+                div.checkout__form-group
+                  input.checkout__form-input(placeholder="Apartamento")
+                  label.checkout__form-label Apartamento
+              .col-24.col-md-12
+                div.checkout__form-group.checkout__form-group--select
+                  select.checkout__form-select
+                    option Estado 1
+                    option Estado 2
+                    option Estado 3
+                    option Estado 4
+                    option Estado 5
+                    option Estado 6
+              .col-24.col-md-12
+                div.checkout__form-group
+                  input.checkout__form-input(placeholder="Cidade *")
+                  label.checkout__form-label Cidade *
+              .col-24.col-md-12
+                div.checkout__form-group.checkout__form-group--xl
+                  input.checkout__form-input(placeholder="CEP *")
+                  label.checkout__form-label CEP *
+
+              .col-24
+                div.checkout__form-group.checkout__form-group--xl
+                  h2.checkout__form-title Como entregamos sua compra?
+                  p.checkout__form-text Por favor indique seu CEP para verificar las alternativas de entrega
+
+              .col-24
+                h2.checkout__form-title Modo de pagamento
+
+              .col-24
+                div.checkout__form-group
+                  div.checkout__form-pagamento
+                    div.checkout__form-radio-group
+                      input.checkout__form-radio(type="radio" name="pagamento" id="pagamento1")
+                      label.checkout__form-radio-label(for="pagamento1") Cart&atilde;o Cédito ou Débito
+                    div.checkout__form-image
+                      img(src="/images/checkout/cartao.png")
+                  div.checkout__form-pagamento
+                    div.checkout__form-radio-group
+                      input.checkout__form-radio(type="radio" name="pagamento" id="pagamento2")
+                      label.checkout__form-radio-label(for="pagamento2") Boleto Bancário
+                    div.checkout__form-image
+                      img(src="/images/checkout/boleto.png")
+                  div.checkout__form-pagamento
+                    div.checkout__form-radio-group
+                      input.checkout__form-radio(type="radio" name="pagamento" id="pagamento3")
+                      label.checkout__form-radio-label(for="pagamento3") Transf&ecirc;rencia Bancária
+
+          .col-24.col-md-12
+            div.checkout__form-wrapper
+              div.checkout__form-title Resumo da sua compra
+              span.checkout__form-accordion-title.-js-accordion-button 2 itens no carrinho
+              div.checkout__accordion.-js-accordion
+                each product in site.data.cartProduct
+                  div.checkout__accordion-item.-js-accordion-item
+                    +cart-product(product)
+              div.checkout__subtotals
+                div.checkout__subtotal
+                  span.checkout__subtotal__text Subtotal
+                  span.checkout__subtotal__number $22.560
+                div.checkout__envio
+                  span.checkout__envio__text Envío
+                  span.checkout__envio__number Aún no se ha calculado
+
+              div.checkout__total
+                span.checkout__total__text Total
+                span.checkout__total__number $22.560
+
+              div.checkout__button finalizar compra
+              
+              div.checkout__disclaimer
+                div.checkout__disclaimer__wrapper
+                  i.fas.fa-lock
+                  span.checkout__disclaimer-text 100% compra segura
+                div.checkout__disclaimer__image
+                  img(src="/images/checkout/compra-segura.png")
+
+

@@ -1,2 +1,78 @@
+include ../../_modules/cart-product/cart-product
+
 header.header
-    
+  .container
+    .row
+      .col-24
+        div.header__top-row
+          div.header__support-mail
+            span.header__support-mail__text Suporte ao cliente
+            i.fa.fa-envelope-o
+            a.header__support-mail__address(href="mailto:eshop.ar@bodegoweinert.com" target="_blank") eshop.ar@bodegoweinert.com
+          nav.header__alt-nav
+            ul.header__alt-nav__list
+              li.header__alt-nav__item
+                a(href="#") Minha conta
+              li.header__alt-nav__item
+                a(href="#") Meus favoritos
+              li.header__alt-nav__item
+                a(href="/contacto") Conecte-se
+    .row
+      .col-24
+        div.header__bottom-row
+          div.header__searchbar
+            input.header__searchbar__input
+            a.header__searchbar__button(href="#")
+              i.fas.fa-search
+          a.header__logo-mobile(href="/")
+            img(src="/images/weinert.png")
+          div.header__wrapper
+            div.header__search-icons
+                i.fas.fa-search.-js-search
+                i.fas.fa-times.-js-close
+            nav.header__main-nav
+              a.header__logo(href="/")
+                img(src="/images/weinert.png")
+              ul.header__main-nav__list
+                li.header__main-nav__item
+                  a(href="/catalogo") Vinho
+                li.header__main-nav__item
+                  a(href="#") 90+ Pontos
+                li.header__main-nav__item
+                  a(href="#") Acessórios
+              ul.header__main-nav__list
+                li.header__main-nav__item
+                  a(href="/contacto") Contate-nos
+                li.header__main-nav__item
+                  a(href="/quem-somos") Quem somos
+            div.header__cart
+              i.fas.fa-shopping-bag
+            div.header__hamburguer
+              span
+              span
+              span
+
+  div.header__shop-cart
+    div.header__shop-cart__container
+      button.header__shop-cart__close-button
+      h2.header__shop-cart__title Carrinho de compras
+      div.header__shop-cart__heading
+        span.header__shop-cart__heading-title Produtos
+        span.header__shop-cart__heading-title Subtotal
+      div.header__shop-cart__accordion
+        each product in site.data.cartProduct
+          div.header__shop-cart__accordion-item
+            +cart-product(product)
+      div.header__shop-cart__subtotals
+        div.header__shop-cart__subtotal
+          span.header__shop-cart__subtotal__text Subtotal
+          span.header__shop-cart__subtotal__number $22.560
+        div.header__shop-cart__envio
+          span.header__shop-cart__envio__text Envío
+          span.header__shop-cart__envio__number Aún no se ha calculado
+
+      div.header__shop-cart__total
+        span.header__shop-cart__total__text Total
+        span.header__shop-cart__total__number $22.560
+
+      div.header__shop-cart__button finalizar compra

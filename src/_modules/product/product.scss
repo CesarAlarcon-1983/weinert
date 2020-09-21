@@ -1,0 +1,114 @@
+.product {
+  width: 100%;
+  padding: 40px 20px;
+  height: 100%;
+  background: $lightBeige;
+  position: relative;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  &__favorite {
+    position: absolute;
+    top: 20px; 
+    right: 20px;
+
+    i {
+      position: absolute;
+      top: 0; 
+      right: 0;
+      font-size: 26px;
+
+      @include mq(md) {
+        font-size: 30px;
+      }
+
+      &.fa-heart {
+        color: $darkBeige;
+        opacity: 0;
+      }
+
+      &.fa-heart-o {
+        color: $lightGray;
+      }
+    }
+  }
+
+  &__image {
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 20px;
+    padding-bottom: 100%;
+    height: 0;
+    position: relative;
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate3d(-50%, -50%, 0);
+      width: auto;
+      height: 80%;
+    }
+  }
+
+  &__content {
+
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 20px;
+    color: $darkGray;
+    font-weight: 500;
+  }
+
+  &__qty {
+    display: block;
+    margin: 0;
+    margin-bottom: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 18px;
+    color: $darkGray;
+    font-weight: 500;
+  }
+
+  &__prices {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-bottom: 20px;
+  }
+
+  &__price {
+    color: $darkBeige;
+    font-size: 22px;
+    margin-right: 20px;
+  }
+
+  &__regular-price {
+    color: $darkGray;
+    font-size: 18px;
+    text-decoration-line: line-through;
+  }
+
+  &__button {
+    @include iconedButton('outline', $darkGray);
+  }
+
+  &__button-text {
+    text-transform: uppercase;
+    color: $darkGray;
+    margin-right: 20px;
+    font-size: 16px;
+    letter-spacing: 3px;
+  }
+}

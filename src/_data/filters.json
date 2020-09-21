@@ -1,0 +1,171 @@
+[
+    {
+        "title":"Categoria",
+        "options": [
+            {
+                "name":"Carrascal",
+                "qty":"5"
+            },
+            {
+                "name":"Weinert Cavas",
+                "qty":"5"
+            },
+            {
+                "name":"Weinert",
+                "qty":"5"
+            }
+        ]
+    },
+    {
+        "title":"preço",
+        "slider":true
+    },
+    {
+        "title":"Tempo em tonel",
+        "options":[
+            {
+                "name":"Áte 1 ano y meio",
+                "qty":"4"
+            },
+            {
+                "name":"2 a 3 anos",
+                "qty":"1"
+            },
+            {
+                "name":"4 a 10 anos",
+                "qty":"4"
+            }
+        ]
+    },
+    {
+        "title":"Potencial de envelhecimiento",
+        "options":[
+            {
+                "name":"1 a 5 anos",
+                "qty":"4"
+            },
+            {
+                "name":"5 a 10 anos",
+                "qty":"1"
+            },
+            {
+                "name":"10 a 20 anos",
+                "qty":"4"
+            }
+        ]
+    },
+    {
+        "title":"Enólogo",
+        "options":[
+            {
+                "name":"Hubert Weber",
+                "qty":"9"
+            }
+        ]
+    },
+    {
+        "title":"Varietais",
+        "options":[
+            {
+                "name":"Mistura",
+                "qty":"2"
+            },
+            {
+                "name":"Cabernet Sauvignon",
+                "qty":"1"
+            },
+            {
+                "name":"Chardonnay",
+                "qty":"1"
+            },
+            {
+                "name":"Malbec",
+                "qty":"4"
+            },
+            {
+                "name":"Merlot",
+                "qty":"2"
+            }
+        ]
+    },
+    {
+        "title":"Pontos",
+        "options":[
+            {
+                "name":"+ 90 pontos",
+                "qty":"9"
+            },
+            {
+                "name":"+ 95 pontos",
+                "qty":"8"
+            }
+        ]
+    },
+    {
+        "title":"Tipo de vinho",
+        "options":[
+            {
+                "name":"Blanc",
+                "qty":"1"
+            },
+            {
+                "name":"Vermelho",
+                "qty":"8"
+            }
+        ]
+    },
+    {
+        "title":"Armonização",
+        "options":[
+            {
+                "name":"Mistura",
+                "qty":"2"
+            },
+            {
+                "name":"Cabernet Sauvignon",
+                "qty":"1"
+            },
+            {
+                "name":"Chardonnay",
+                "qty":"1"
+            },
+            {
+                "name":"Malbec",
+                "qty":"4"
+            },
+            {
+                "name":"Merlot",
+                "qty":"2"
+            }
+        ]
+    },
+    {
+        "title":"Colheita",
+        "options":[
+            {
+                "name":"2008",
+                "qty":"1"
+            },
+            {
+                "name":"2009",
+                "qty":"1"
+            },
+            {
+                "name":"2010",
+                "qty":"1"
+            },
+            {
+                "name":"2011",
+                "qty":"1"
+            },
+            {
+                "name":"2017",
+                "qty":"2"
+            },
+            {
+                "name":"2019",
+                "qty":"2"
+            }
+        ]
+    }
+]

@@ -23,6 +23,14 @@ body {
     font-size: $sm;
 }
 
+main {
+  margin-top: 50px;
+
+  @include mq(md) {
+    margin-top: 120px;
+  }
+}
+
 a {
     color:$link;
     transition: all $duration $easingLight;
@@ -33,7 +41,15 @@ a {
     }
 }
 
+button,
+input,
+textarea,
+a {
+  font-family: $mainFont;
+}
+
 ul {
+    font-family: $mainFont;
     list-style: none;
     padding: 0;
     margin: 0;

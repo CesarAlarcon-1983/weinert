@@ -1,0 +1,125 @@
+extends ../_layouts/base
+
+include ../_modules/product/product
+
+block config
+  //- Correct base url pathing for this page
+  - var baseUrl = '../';
+
+block content
+  main.catalogo
+    div.catalogo__top-banner
+      img(src="/images/tienda/banner.jpg")
+      .container
+        .row
+          .col-24
+            h2.catalogo__top-banner__title Para guardar
+            p.catalogo__top-banner__text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+    .container
+      .row
+        .col-24
+          div.catalogo__heading
+            h1.catalogo__title Catálogo
+            div.catalogo__filter-group
+              span.catalogo__filter-text Organizar
+              select.catalogo__filter-input
+                option(selected hidden disabled) Realçar
+                option(value=1) 1
+                option(value=2) 2
+                option(value=3) 3
+                option(value=4) 4
+                option(value=5) 5
+        .col-24.col-md-6
+          div.catalogo__container
+            div.catalogo__group
+              div.catalogo__group-content
+                div.catalogo__active-filter
+                  div.catalogo__active-filter__text 2018
+                  i.fas.fa-times
+                div.catalogo__active-filter
+                  div.catalogo__active-filter__text Malbec
+                  i.fas.fa-times
+                div.catalogo__active-filter
+                  div.catalogo__active-filter__text Cabernet Sauvignon
+                  i.fas.fa-times
+
+            each item in site.data.filters
+              div.catalogo__group
+                div.catalogo__group-content
+                  h2.catalogo__group-title=item.title
+                  if item.slider
+                    .catalogo__price-range
+                      .catalogo__price-range__bar-wrapper
+                        input.catalogo__price-range__bar.js-range-price(type='range', multiple, value="1000,50000", step="100" min="1000", max="50000")
+                        input(type="hidden", name="from-price", id="inputPriceFrom")
+                        input(type="hidden", name="to-price", id="inputPriceTo")
+                      div.catalogo__price-range__labels-wrapper
+                        div.catalogo__price-range__labels-group
+                          span.-currency $
+                          label.catalogo__price-range__label.js-range-price-low
+                        span -
+                        div.catalogo__price-range__labels-group
+                          span.-currency $
+                          label.catalogo__price-range__label.js-range-price-high
+
+                  else
+                    ul.catalogo__group-list
+                      each filter in item['options']
+                        li.catalogo__group-item
+                          div.catalogo__filters-group
+                            input.catalogo__filters-input(type="checkbox" name=filter.name id=filter.name)
+                            label.catalogo__filters-label(for=filter.name)=filter.name
+                          span.catalogo__filters-available=filter.qty
+
+            //- div.catalogo__group
+            //-   div.catalogo__group-content
+            //-     div.catalogo__group-title Preço
+
+            //- div.catalogo__group
+            //-   div.catalogo__group-content
+            //-     each item in site.data.filters['tempo']
+            //-       div.catalogo__group-title=item.title
+            //-       ul.catalogo__group-list
+            //-         each filter in item.options
+            //-           li.catalogo__group-item
+            //-             div.catalogo__filters-group
+            //-               input.catalogo__filters-input(type="checkbox" name=filter.name)
+            //-               label.catalogo__filters-label(for=filter.name)=filter.name
+            //-             span.catalogo__filters-available=filter.qty
+
+            //- div.catalogo__group
+            //-   div.catalogo__group-content
+            //-     each item in site.data.filters['potencial']
+            //-       div.catalogo__group-title=item.title
+            //-       ul.catalogo__group-list
+            //-         each filter in item.options
+            //-           li.catalogo__group-item
+            //-             div.catalogo__filters-group
+            //-               input.catalogo__filters-input(type="checkbox" name=filter.name)
+            //-               label.catalogo__filters-label(for=filter.name)=filter.name
+            //-             span.catalogo__filters-available=filter.qty
+
+            //- div.catalogo__group
+            //-   div.catalogo__group-content
+            //-     each item in site.data.filters['armonizacao']
+            //-       div.catalogo__group-title=item.title
+            //-       ul.catalogo__group-list
+            //-         each filter in item.options
+            //-           li.catalogo__group-item
+            //-             div.catalogo__filters-group
+            //-               input.catalogo__filters-input(type="checkbox" name=filter.name)
+            //-               label.catalogo__filters-label(for=filter.name)=filter.name
+            //-             span.catalogo__filters-available=filter.qty
+
+        .col-24.col-md-18
+          div.catalogo__products-container
+          .row
+            each collection in site.data.wines['carrascal']
+              .col-24.col-md-8
+                div.catalogo__product-container
+                  +product(collection)
+
+            each collection in site.data.wines['weinert']
+              .col-24.col-md-8
+                div.catalogo__product-container
+                  +product(collection)

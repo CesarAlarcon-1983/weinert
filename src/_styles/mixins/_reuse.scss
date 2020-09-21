@@ -158,3 +158,65 @@
         }
     }
 }
+
+@mixin iconedButton($type: 'fill', $color: $white, $contrast: $darkestGray) {
+    display: inline-block;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 20px;
+    color: $color;
+    cursor: pointer;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+
+    @include mq(md) {
+    }
+
+    i {
+        color: $color;
+        font-size: 16px;
+    }
+
+    @if $type == 'fill' {
+        @include trans;
+
+        background: $color;
+        border: 1px solid $color;
+        color: $contrast;
+
+        &:hover {
+            background: $color - #111;
+            border: 1px solid $color - #111;
+        }
+    
+        i {
+            color: $contrast;
+            font-size: 16px;
+        }
+    }
+
+    @if $type == 'outline' {
+        @include trans;
+
+        background: transparent;
+        border: 1px solid $color;
+        color: $color;
+
+        i,span {
+            @include trans;
+
+            color: $color;
+            font-size: 16px;
+        }
+
+        &:hover {
+            background: $color;
+            span,i {
+                color: $white;
+            }
+        }
+    }
+}

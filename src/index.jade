@@ -1,4 +1,143 @@
 extends _layouts/base
 
+include ./_modules/slider/slider
+include ./_modules/product/product
+
 block content
-    main.home
+  main.home
+    section.home__hero
+      +slider('home__hero__slider', 'normal')
+        .home__hero__slide
+          .home__hero__slide-image
+            img(src="images/home/slide1.jpg")
+        .home__hero__slide
+          .home__hero__slide-image
+            img(src="images/home/slide2.jpg")
+
+      div.home__hero__content
+        .container
+          .row
+            .col-24
+              div.home__hero__description
+                p.home__hero__text Fundado e dirigido por brasileiros desde 1975.<br>Vinhos reconhecidos pela impresa internacional, produzidos em Mendoza, Argentina, com uma filosofia diferente, fiel ao estilo dos grandes vinhos da Europa.
+              div.home__hero__characteristics
+                .row
+                  .col-24.col-md-8
+                    div.home__hero__characteristic
+                      div.home__hero__characteristic__icon
+                        img(src="images/home/subhero-icon-1.png")
+                      h3.home__hero__characteristic__title Vinhos estilo do velho mundo
+                      p.home__hero__characteristic__text Longo envelhecimiento em foudres
+                  .col-24.col-md-8
+                    div.home__hero__characteristic
+                      div.home__hero__characteristic__icon
+                        img(src="images/home/subhero-icon-2.png")
+                      h3.home__hero__characteristic__title 3X sem juros
+                      p.home__hero__characteristic__text Parcelamento no cartao
+                  .col-24.col-md-8
+                    div.home__hero__characteristic
+                      div.home__hero__characteristic__icon
+                        img(src="images/home/subhero-icon-3.png")
+                      h3.home__hero__characteristic__title Compra 100% segura
+                      p.home__hero__characteristic__text Seus dados totalmente protegidos
+
+    section.home__destacados
+      .container
+        .row
+          .col-24
+            div.home__destacados__main-destacados
+              .row
+                .col-24
+                  div.home__destacados__heading
+                    h2.home__destacados__title Nossos destaques
+                    a.home__destacados__more(href="#") Ver todos
+                .col-24.home__destacados__main-destacado-slider
+                  +slider('home__destacados__main-slider', 'alt')
+                    div.home__destacados__main-slide
+                      div.home__destacados__main-destacado
+                        div.home__destacados__favorite
+                          i.fa.fa-heart
+                          i.fa.fa-heart-o
+                        div.home__destacados__destacado-image
+                          img.-seal(src="images/home/destaques-seal.png")
+                          img.-image1(src="images/home/destaques-1.png")
+                        div.home__destacados__destacado-content
+                          h4.home__destacados__destacado-title Dou malbec
+                          div.home__destacados__destacado-prices
+                            span.home__destacados__destacado-price $4.032
+                            span.home__destacados__destacado-regular-price $5.760
+                          button.home__destacados__destacado-button
+                            span.home__destacados__button-text Adicionar
+                            i.fa.fa-shopping-bag
+                    div.home__destacados__main-slide
+                      div.home__destacados__main-destacado
+                        div.home__destacados__favorite
+                          i.fa.fa-heart
+                          i.fa.fa-heart-o
+                        div.home__destacados__destacado-image
+                          img.-seal(src="images/home/destaques-seal.png")
+                          img.-image2(src="images/home/destaques-2.png")
+                        div.home__destacados__destacado-content
+                          h4.home__destacados__destacado-title Weinert family collection
+                          div.home__destacados__destacado-prices
+                            span.home__destacados__destacado-price $6.976
+                            span.home__destacados__destacado-regular-price $8.720
+                          button.home__destacados__destacado-button
+                            span.home__destacados__button-text Adicionar
+                            i.fa.fa-shopping-bag
+
+
+            div.home__destacados__carrousel
+              .row
+                .col-24
+                  div.home__destacados__heading 
+                    h2.home__destacados__title Linha Carrascal
+                    a.home__destacados__more(href="#") Ver todos
+                .col-24
+                  +slider('home__destacados__slider', 'three')
+                    each collection in site.data.wines['carrascal']
+                      div.home__destacados__slide
+                        +product(collection)
+
+      div.home__destacados__top-destacados
+        div.container-fluid
+          div.row.nopadding
+            div.col-24.col-md-12
+              div.home__destacados__top-destacado.home__destacados__top-destacado--left
+                img.-background(src="/images/home/presentar.jpg")
+                div.home__destacados__top-destacado-content
+                  div.home__destacados__top-destacado-wrapper
+                    h3.home__destacados__top-destacado-subtitle para
+                    h2.home__destacados__top-destacado-title Presentear
+                    img.-underline(src="/images/home/underline.png")
+                  a.home__destacados__top-destacado-button(href="#") 30% off
+            div.col-24.col-md-12
+              div.home__destacados__top-destacado.home__destacados__top-destacado--right
+                img.-background(src="/images/home/guardar.jpg")
+                div.home__destacados__top-destacado-content
+                  div.home__destacados__top-destacado-wrapper
+                    h3.home__destacados__top-destacado-subtitle para
+                    h2.home__destacados__top-destacado-title Guardar
+                    img.-underline(src="/images/home/underline.png")
+                  a.home__destacados__top-destacado-button(href="/catalogo/?guardar") Seleç&atilde;o
+
+      div.home__destacados__carrousel
+        .container
+          .row
+            .col-24
+              div.home__destacados__heading 
+                h2.home__destacados__title Linha Weinert
+                a.home__destacados__more(href="#") Ver todos
+            .col-24
+              +slider('home__destacados__slider', 'three')
+                each collection in site.data.wines['weinert']
+                  div.home__destacados__slide
+                    +product(collection)
+
+    section.home__interstitial
+      img(src="images/home/nosso-cava.jpg")
+      div.home__interstitial__content
+        div.home__interstitial__wrapper
+          h2.home__interstitial__title nosso cava
+          img(src="images/home/underline.png")
+        a.home__interstitial__button(href="#") Colheitas especiais

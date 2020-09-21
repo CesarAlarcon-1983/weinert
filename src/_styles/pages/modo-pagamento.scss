@@ -1,0 +1,108 @@
+.modo-pagamento {
+    background: $lightBeige;
+    padding: 40px 0;
+
+    @include mq(md) {
+        padding: 80px 0;
+    }
+
+    &__wrapper {
+        padding-bottom: 40px;
+        margin-bottom: 40px;
+        border-bottom: 1px solid  $lightGray;
+
+
+        &--no-border {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+            }
+    }
+
+    &__title {
+        font-family: $titleFont;
+        font-size: 30px;
+        color: $darkGray;
+        margin: 0;
+        margin-bottom: 20px;
+        font-weight: 100;
+        text-transform: uppercase;
+
+        @include mq(md) {
+            margin-bottom: 40px;
+        }
+    }
+
+    &__logos {
+        margin-bottom: 20px;
+        
+        @include mq(md) {
+            display: flex;
+            margin-bottom: 40px;
+        }
+    }
+
+    &__logo {
+        margin-bottom: 20px;
+
+        @include mq(md) {
+            margin-bottom: 0;
+        }
+
+        img {
+            width: 50%;
+
+            @include mq(md) {
+                width: auto;
+            }
+        }
+
+        @include mq(md) {
+            margin-right: 40px;
+        }
+    }
+
+    &__subtitle {
+        text-transform: uppercase;
+        color: $darkGray;
+        margin: 0;
+        margin-bottom: 20px;
+        font-size: 16px;
+
+        @include mq(md) {
+            font-size: 20px;
+            margin-bottom: 40px;
+        }
+    }
+
+    &__image {
+        img {
+            width: 50%;
+            mix-blend-mode: multiply;
+
+            @include mq(md) {
+                width: auto;
+            }
+        }
+
+        &--large {
+            img {
+                width: 100%;
+
+                @include mq(md) {
+                    width: auto;
+                }
+            }
+        }
+    }
+
+    &__text {
+        color: $darkGray;
+        margin: 0;
+        margin-bottom: 40px;
+
+        &--no-margin {
+            margin: 0;
+        }
+    }
+}

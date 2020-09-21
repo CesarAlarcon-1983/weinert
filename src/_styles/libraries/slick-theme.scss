@@ -62,35 +62,38 @@ $slick-opacity-not-active: 0.25 !default;
 
 .slick-prev,
 .slick-next {
-    display: none!important;
+    display: none !important;
     position: absolute;
-    display: block;
-    height: 30px;
-    width: 30px;
+    height: 50px;
+    width: 50px;
     line-height: 0px;
     font-size: 0px;
     cursor: pointer;
-    background: transparent;
+    background: $white;
+    border-radius: 50%;
+    box-shadow: 0 5px 5px 1px rgba(0,0,0,.15);
     color: transparent;
     top: 50%;
-    -webkit-transform: translate(0, -50%);
-    -ms-transform: translate(0, -50%);
-    transform: translate(0, -50%);
+    -webkit-transform: scale(.8) translate(0, -50%);
+    -ms-transform: scale(.8) translate(0, -50%);
+    transform: scale(.8) translate(0, -50%);
     padding: 0;
     border: none;
     outline: none;
     z-index: 10;
+
     &:hover, &:focus {
         outline: none;
-        background: transparent;
         color: transparent;
         &:before {
             opacity: $slick-opacity-on-hover;
         }
     }
+
     &.slick-disabled:before {
         opacity: $slick-opacity-not-active;
     }
+
     &:before {
         font-family: $slick-font-family;
         font-size: 30px;
@@ -102,18 +105,32 @@ $slick-opacity-not-active: 0.25 !default;
     }
 
     @include mq(md) {
-        display:block!important;
+        display: block!important;
+        height: 50px;
+        width: 50px;
+        -webkit-transform: scale(1) translate(0, -50%);
+        -ms-transform: scale(1) translate(0, -50%);
+        transform: scale(1) translate(0, -50%);
     };
 }
 
 .slick-prev {
-    left: 20px;
+    left: -25px;
     [dir="rtl"] & {
         left: auto;
         right: 10px;
     }
     &:before {
-        content: $slick-prev-character;
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: calc(50% + 1px);
+        height: 12px;
+        width: 12px;
+        border-left: 2px solid $darkGray;
+        border-bottom: 2px solid $darkGray;
+        transform: translate3d(-50%, -50%, 0) rotate(45deg);
+
         [dir="rtl"] & {
             content: $slick-next-character;
         }
@@ -121,13 +138,22 @@ $slick-opacity-not-active: 0.25 !default;
 }
 
 .slick-next {
-    right: 20px;
+    right: -25px;
     [dir="rtl"] & {
         left: 10px;
         right: auto;
     }
     &:before {
-        content: $slick-next-character;
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: calc(50% - 2px);
+        height: 12px;
+        width: 12px;
+        border-right: 2px solid $darkGray;
+        border-bottom: 2px solid $darkGray;
+        transform: translate3d(-50%, -50%, 0) rotate(-45deg);
+
         [dir="rtl"] & {
             content: $slick-prev-character;
         }

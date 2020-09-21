@@ -1,0 +1,18 @@
+include ../../_modules/quantity-selector/quantity-selector
+
+mixin cart-product(product)
+  div.cart-product
+    div.cart-product__image-wrapper
+      div.cart-product__image
+        img(src=product.image)
+    div.cart-product__content
+      h2.cart-product__title=product.title
+      span.cart-product__qty=product.qty
+      span.cart-product__price=product.price
+      +quantity-selector()
+    div.cart-product__total
+      div.cart-product__total__price=product.price
+      i.fas.fa-trash
+
+
+

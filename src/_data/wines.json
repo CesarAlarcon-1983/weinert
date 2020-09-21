@@ -1,0 +1,92 @@
+{
+    "carrascal": [
+        {
+            "url":"/images/home/linha-carrascal-1.png",
+            "title":"Colecao Carrascal",
+            "qty":"6 X 750 ML",
+            "price":"$2.592",
+            "regular_price":"$3.240"
+        },
+        {
+            "url":"/images/home/linha-carrascal-2.png",
+            "title":"Carrascal malbec 2017",
+            "qty":"6 X 750 ML",
+            "price":"$2.496",
+            "regular_price":"$3.120"
+        },
+        {
+            "url":"/images/home/linha-carrascal-3.png",
+            "title":"Carrascal chardonnay 2020",
+            "qty":"6 X 750 ML",
+            "price":"$1.920",
+            "regular_price":"$2.400"
+        },
+        {
+            "url":"/images/home/linha-carrascal-1.png",
+            "title":"Colecao Carrascal",
+            "qty":"6 X 750 ML",
+            "price":"$2.592",
+            "regular_price":"$3.240"
+        },
+        {
+            "url":"/images/home/linha-carrascal-2.png",
+            "title":"Carrascal malbec 2017",
+            "qty":"6 X 750 ML",
+            "price":"$2.496",
+            "regular_price":"$3.120"
+        },
+        {
+            "url":"/images/home/linha-carrascal-3.png",
+            "title":"Carrascal chardonnay 2020",
+            "qty":"6 X 750 ML",
+            "price":"$1.920",
+            "regular_price":"$2.400"
+        }
+    ],
+    "weinert": [
+        {
+            "url":"/images/home/linha-weinert-1.png",
+            "title":"Weinert malbec magnum 2010",
+            "qty":"4 X 1500 ML",
+            "price":"$10.560",
+            "regular_price":"$13.200"
+        },
+        {
+            "url":"/images/home/linha-weinert-2.png",
+            "title":"Weinert malbec 2010",
+            "qty":"6 X 750 ML",
+            "price":"$6.720",
+            "regular_price":"$8.400"
+        },
+        {
+            "url":"/images/home/linha-weinert-3.png",
+            "title":"Cavas de weinert 2009",
+            "qty":"6 X 750 ML",
+            "price":"$15.840",
+            "regular_price":"$19.800"
+        },
+        {
+            "url":"/images/home/linha-weinert-1.png",
+            "title":"Weinert malbec magnum 2010",
+            "qty":"4 X 1500 ML",
+            "price":"$10.560",
+            "regular_price":"$13.200"
+        },
+        {
+            "url":"/images/home/linha-weinert-2.png",
+            "title":"Weinert malbec 2010",
+            "qty":"6 X 750 ML",
+            "price":"$6.720",
+            "regular_price":"$8.400"
+        },
+        {
+            "url":"/images/home/linha-weinert-3.png",
+            "title":"Cavas de weinert 2009",
+            "qty":"6 X 750 ML",
+            "price":"$15.840",
+            "regular_price":"$19.800"
+        }
+    ]
+}
+
+

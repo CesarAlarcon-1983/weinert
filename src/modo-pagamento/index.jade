@@ -1,0 +1,36 @@
+extends ../_layouts/base
+
+block config
+  //- Correct base url pathing for this page
+  - var baseUrl = '../';
+
+block content
+  main.modo-pagamento
+    .container
+      .row
+        .col-24.col-md-20.offset-md-2
+          div.modo-pagamento__wrapper
+            h2.modo-pagamento__title Modo de pagamento
+            div.modo-pagamento__logos
+              div.modo-pagamento__logo
+                img(src="/images/envio/paypal.png")
+              div.modo-pagamento__logo
+                img(src="/images/envio/pagbank.png")
+            h3.modo-pagamento__subtitle Cart&atilde;o de crédito ou débito
+            div.modo-pagamento__image.modo-pagamento__image--large
+                img(src="/images/envio/cartao.png")
+
+        .col-24.col-md-20.offset-md-2
+          div.modo-pagamento__wrapper
+            h2.modo-pagamento__title Transfer&ecirc;ncia bancária
+            p.modo-pagamento__text.modo-pagamento__text--no-margin Ao seleccionar a opç&atilde;o transfer&ecirc;ncia bancária no check-out encontrará os dados  que precisa para efetuar seu pagamento. 
+
+        .col-24.col-md-20.offset-md-2
+          div.modo-pagamento__wrapper.modo-pagamento__wrapper--no-border
+            h1.modo-pagamento__title Opç&otilde;es de entrega
+            p.modo-pagamento__text Ao efetuar sua compra em nossa loja, poderá optar pela entrega em sua casa ou na ag&ecirc;ncia de Fedex mais próxima de sua casa. Assim que terminar a comprar enviaremos um email com um código de seguimento para que possa acompanhar seu pedido. Para compras de um valor acima de R$ xxxxxx a entrega é por nossa conta.
+              div.modo-pagamento__image
+                  img(src="/images/envio/fedex.png")
+
+
+

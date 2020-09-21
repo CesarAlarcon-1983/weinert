@@ -1,0 +1,32 @@
+extends ../_layouts/base
+
+block config
+  //- Correct base url pathing for this page
+  - var baseUrl = '../';
+
+block content
+  main.contacto
+    div.contacto__container
+      div.contacto__heading
+        h2.contacto__heading__title Entre em contato
+        p.contacto__heading__text Preencha o seguinte formulário e em breve entraremos em contato con voc&ecirc;
+      form.contacto__form
+        div.contacto__form-group
+          input.contacto__form-input(placeholder="Nome *")
+          label.contacto__form-label Nome *
+        div.contacto__form-group
+          input.contacto__form-input(placeholder="Seu email *")
+          label.contacto__form-label Seu email *
+
+        div.contacto__form-group
+          input.contacto__form-input(placeholder="Telefone *")
+          label.contacto__form-label Telefone *
+
+        div.contacto__form-group
+          textarea.contacto__form-input.contacto__form-input--textarea(placeholder="Como podemos lhe ajudar? *")
+          label.contacto__form-label.contacto__form-label--textarea Como podemos lhe ajudar? *
+
+        div.contacto__form-group
+          button.contacto__form-button Enviar
+    div.contacto__image
+      img(src="/images/contacto/foto.jpg")
