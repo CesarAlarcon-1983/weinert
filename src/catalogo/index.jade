@@ -20,6 +20,7 @@ block content
         .col-24
           div.catalogo__heading
             h1.catalogo__title Catálogo
+            i.fas.fa-filter.js-catalogoFilter
             div.catalogo__filter-group
               span.catalogo__filter-text Organizar
               select.catalogo__filter-input
@@ -29,7 +30,9 @@ block content
                 option(value=3) 3
                 option(value=4) 4
                 option(value=5) 5
-        .col-24.col-md-6
+        .col-24.col-md-6.catalogo__filters
+          button.js-catalogoFilterClose
+            i.fas.fa-close
           div.catalogo__container
             div.catalogo__group
               div.catalogo__group-content

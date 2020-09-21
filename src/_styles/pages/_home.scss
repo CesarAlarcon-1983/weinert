@@ -4,11 +4,11 @@
   &__hero {
     &__slider,
     &__slide {
-      height: 70vh;
-      margin-bottom: -0px !important;
+      height: 50vh;
+      margin-bottom: -5px !important;
 
       @include mq(md) {
-        height: 41vh;
+        height: auto;
       }
     }
 
@@ -42,10 +42,16 @@
       height: 100%;
       width: 100%;
       overflow: hidden;
+      display: flex;
+      justify-content: center;
 
       img {
-        width: 100%;
-        height: auto;
+        height: 100%;
+
+        @include mq(md) {
+          width: 100%;
+          height: auto;
+        }
       }
     }
 
@@ -175,6 +181,7 @@
     }
 
     &__main-destacado-slider {
+
       @include mq(md) {
         // display: none;
       }
@@ -192,6 +199,14 @@
       .slick-prev,
       .slick-next {
         display: block !important;
+      }
+
+      .slick-prev {
+        left: -10px;
+      }
+
+      .slick-next {
+        right: -10px;
       }
 
       .slick-list {
@@ -392,6 +407,15 @@
         display: block !important;
       }
 
+      .slick-prev {
+        left: -10px;
+      }
+
+      .slick-next {
+        right: -10px;
+      }
+
+
       .slick-slide {
         margin: 0 20px;
         height: 100%;
@@ -497,13 +521,29 @@
   }
 
   &__interstitial {
-    height: 41vh;
     position: relative;
     overflow: hidden;
+    margin-bottom: -5px;
 
-    img {
-      width: 100%;
+    &__image {
+      height: 50vh;
+      display: flex;
+      justify-content: center;
+
+      @include mq(md) {
+        height: auto;
+      }
+
+      img {
+        height: 100%;
+
+        @include mq(md) {
+          width: 100%;
+          height: auto;
+        }
+      }
     }
+
 
     &__content {
       position: absolute;
@@ -521,7 +561,7 @@
       img {
         position: absolute;
         bottom: -20px;
-        right: 70px;
+        right: 50px;
         width: 30%;
       }
     }
@@ -529,12 +569,16 @@
     &__title {
       font-family: $altFont;
       color: $white;
-      font-size: 60px;
+      font-size: 36px;
       transform: rotate(-5deg);
       margin: 0;
       text-align: center;
       font-weight: 100;
       text-transform: capitalize;
+
+      @include mq(md) {
+        font-size: 60px;
+      }
     }
 
     &__button  {
@@ -558,6 +602,38 @@
 
       @include mq(md) {
         font-size: 26px;
+      }
+    }
+  }
+}
+
+
+.js-fav {
+  
+  cursor: pointer;
+  z-index: 10;
+  
+  i{
+    font-weight: 100;
+    ;
+    @include trans;
+    &:first-of-type {
+      opacity: 0;
+    }
+
+    &:last-of-type {
+      opacity: 1;
+    }
+  }
+
+  &.-active {
+    i{
+      &:first-of-type {
+        opacity: 1;
+      }
+  
+      &:last-of-type {
+        opacity: 0;
       }
     }
   }

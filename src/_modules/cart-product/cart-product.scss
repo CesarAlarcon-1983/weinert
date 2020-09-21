@@ -53,7 +53,7 @@
     }
 
     &__title {
-        font-size: 20px;
+        font-size: 16px;
 
         @include mq(md) {
             font-size: 24px;
@@ -71,6 +71,15 @@
     &__price {
         color: $darkBeige;
         margin-bottom: 10px;
+    }
+
+    &__qty,
+    &__price {
+      font-size: 14px;
+
+      @include mq(md) {
+        font-size: 16px;
+      }
     }
 
     &__total {

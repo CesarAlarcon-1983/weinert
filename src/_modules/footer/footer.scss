@@ -1,4 +1,44 @@
 .footer {
+  &__disclaimer {
+    background: $white;
+    padding: 15px 0;
+    
+    p {
+      width: auto;
+      margin: 0;
+      flex-shrink: 2;
+    }
+  }
+  
+  &__disclaimer-content {
+    text-align: center;
+    font-weight: 400;
+    color: $midGray;
+
+    @include mq(md) {
+      text-align: left;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__legal {
+      flex-shrink: 2;
+      width: auto;
+      a {
+        display: block;
+        text-decoration: none;
+        color: $midGray;
+
+        @include mq(md) {
+         margin-left: 15px;
+        }
+      }
+      @include mq(md) {
+        display: flex;
+      }
+    }
+  }
+
   &__top-row {
     background: $darkBeige;
     padding: 20px 0;
@@ -21,7 +61,17 @@
   }
 
   &__icon {
-    margin-right: 40px;
+    width: 40px;
+    margin-right: 20px;
+
+    @include mq(md) {
+      width: 60px;
+      margin-right: 40px;
+    }
+
+    img {
+      width: 100%;
+    }
   }
 
   &__content {
@@ -34,6 +84,7 @@
       font-weight: 700;
       text-transform: uppercase;
       font-size: 20px;
+      letter-spacing: 1.5px;
 
       @include mq(md) {
         font-size: 20px;
@@ -51,7 +102,7 @@
     padding-top: 40px;
 
     @include mq(md) {
-      padding: 40px 0;
+      padding: 80px 0;
     }
   }
 
@@ -69,20 +120,21 @@
 
   &__newsletter {
     &__title {
-      font-size: 18px;
-      color: $white;
+      font-size: 16px;
+      color: $lightGray;
       margin: 0;
       margin-bottom: 20px;
     }
 
     &__text {
-      color: $midGray;
+      color: $lightGray;
     }
 
     &__input-group {
       border: 1px solid $midGray;
       height: 50px;
       display: flex;
+      position: relative;
 
       i {
         width: 50px;
@@ -103,12 +155,49 @@
       padding-left: 20px;
       color: $midGray;
     }
+
+    &__submit {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background: transparent;
+      right:0;
+      top:0;
+      border:none;
+      cursor: pointer;
+
+      &:after,
+      &:before {
+        display: block;
+        content: '';
+        border-top: 1px solid $midGray;
+        position: absolute;
+        right: 15px;
+        top:50%;
+      }
+      
+      &:after {
+        border-right: 1px solid $midGray;
+        height: 15px;
+        width: 15px;
+        transform: translate3d(0, -50%, 0) rotate(45deg);
+      }
+      
+      &:before {
+        width: 25px;
+        transform: translate3d(0, -50%, 0);
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
   }
 
   &__social{
     &__title {
-      font-size: 18px;
-      color: $white;
+      font-size: 16px;
+      color: $lightGray;
     }
 
     &__list {
@@ -119,7 +208,7 @@
       margin-right: 20px;
 
       i {
-        color: $white;
+        color: $lightGray;
       }
     }
   }
@@ -142,8 +231,8 @@
     }
 
     &__title {
-      color: $white;
-      font-size: 16px;
+      color: $lightGray;
+      font-size: 14px;
       text-transform: uppercase;
       margin: 0;
       margin-bottom: 20px;
@@ -153,14 +242,14 @@
     &__phone,
     &__text,
     &__item {
-      color: $midGray;
+      color: $lightGray;
       text-decoration: none;
       margin: 0;
       margin-bottom: 10px;
       
       a {
         text-decoration: none;
-        color: $midGray;
+        color: $lightGray;
         margin-bottom: 10px;
       }
     }
@@ -177,11 +266,14 @@
     &__wrapper {
       display: flex;
       margin-bottom: 10px;
+      align-items: flex-start;
 
-      i {
+      i,
+      img {
         width: 20px;
-        margin-right: 20px;
-        color: $white;
+        flex-shrink: 0;
+        color: $lightGray;
+        margin-right: 10px;
       }
     }
   }

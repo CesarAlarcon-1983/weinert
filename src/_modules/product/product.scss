@@ -57,7 +57,9 @@
   }
 
   &__content {
-
+    a {
+      text-decoration: none;
+    }
   }
 
   &__title {

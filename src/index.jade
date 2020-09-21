@@ -55,7 +55,7 @@ block content
                   +slider('home__destacados__main-slider', 'alt')
                     div.home__destacados__main-slide
                       div.home__destacados__main-destacado
-                        div.home__destacados__favorite
+                        div.home__destacados__favorite.js-fav.-active
                           i.fa.fa-heart
                           i.fa.fa-heart-o
                         div.home__destacados__destacado-image
@@ -71,7 +71,7 @@ block content
                             i.fa.fa-shopping-bag
                     div.home__destacados__main-slide
                       div.home__destacados__main-destacado
-                        div.home__destacados__favorite
+                        div.home__destacados__favorite.js-fav
                           i.fa.fa-heart
                           i.fa.fa-heart-o
                         div.home__destacados__destacado-image
@@ -110,7 +110,7 @@ block content
                     h3.home__destacados__top-destacado-subtitle para
                     h2.home__destacados__top-destacado-title Presentear
                     img.-underline(src="/images/home/underline.png")
-                  a.home__destacados__top-destacado-button(href="#") 30% off
+                  a.home__destacados__top-destacado-button(href="/catalogo?guardar") 30% off
             div.col-24.col-md-12
               div.home__destacados__top-destacado.home__destacados__top-destacado--right
                 img.-background(src="/images/home/guardar.jpg")
@@ -135,7 +135,8 @@ block content
                     +product(collection)
 
     section.home__interstitial
-      img(src="images/home/nosso-cava.jpg")
+      .home__interstitial__image
+        img(src="images/home/nosso-cava.jpg")
       div.home__interstitial__content
         div.home__interstitial__wrapper
           h2.home__interstitial__title nosso cava

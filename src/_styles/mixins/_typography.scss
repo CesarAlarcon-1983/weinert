@@ -11,7 +11,6 @@ $fa-font-display: block !default;
   font-display: $fa-font-display;
   src: url('/fonts/fa-regular-400.eot');
   src: url('/fonts/fa-regular-400.eot?#iefix') format('embedded-opentype'),
-  url('/fonts/fa-regular-400.woff2') format('woff2'),
   url('/fonts/fa-regular-400.woff') format('woff'),
   url('/fonts/fa-regular-400.ttf') format('truetype'),
   url('/fonts/fa-regular-400.svg#fontawesome') format('svg');
@@ -30,7 +29,6 @@ $fa-font-display: block !default;
     font-display: $fa-font-display;
     src: url('/fonts/fa-solid-900.eot');
     src: url('/fonts/fa-solid-900.eot?#iefix') format('embedded-opentype'),
-    url('/fonts/fa-solid-900.woff2') format('woff2'),
     url('/fonts/fa-solid-900.woff') format('woff'),
     url('/fonts/fa-solid-900.ttf') format('truetype'),
     url('/fonts/fa-solid-900.svg#fontawesome') format('svg');
@@ -50,7 +48,6 @@ $fa-font-display: block !default;
     font-display: $fa-font-display;
     src: url('/fonts/fa-brands-400.eot');
     src: url('/fonts/fa-brands-400.eot?#iefix') format('embedded-opentype'),
-    url('/fonts/fa-brands-400.woff2') format('woff2'),
     url('/fonts/fa-brands-400.woff') format('woff'),
     url('/fonts/fa-brands-400.ttf') format('truetype'),
     url('/fonts/fa-brands-400.svg#fontawesome') format('svg');
@@ -63,28 +60,28 @@ $fa-font-display: block !default;
 }
   
 @font-face {
-  font-family: 'Futura 800';
+  font-family: 'Futura';
   src: url('/fonts/FuturaStd-ExtraBold.woff2') format('woff2'),
       url('/fonts/FuturaStd-ExtraBold.woff') format('woff');
-  font-weight: 800;
+  font-weight: 900;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Futura bold';
+  font-family: 'Futura';
   src: url('/fonts/FuturaStd-Bold.woff2') format('woff2'),
       url('/fonts/FuturaStd-Bold.woff') format('woff');
-  font-weight: bold;
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Futura Oblique';
+  font-family: 'Futura';
   src: url('/fonts/FuturaStd-BookOblique.woff2') format('woff2'),
       url('/fonts/FuturaStd-BookOblique.woff') format('woff');
-  font-weight: normal;
+  font-weight: 400;
   font-style: italic;
   font-display: swap;
 }
@@ -93,22 +90,22 @@ $fa-font-display: block !default;
   font-family: 'Futura';
   src: url('/fonts/FuturaStd-Book.woff2') format('woff2'),
       url('/fonts/FuturaStd-Book.woff') format('woff');
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Futura bold-italic';
+  font-family: 'Futura';
   src: url('/fonts/FuturaStd-BoldOblique.woff2') format('woff2'),
       url('/fonts/FuturaStd-BoldOblique.woff') format('woff');
-  font-weight: bold;
+  font-weight: 700;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Futura light';
+  font-family: 'Futura';
   src: url('/fonts/FuturaStd-Light.woff2') format('woff2'),
       url('/fonts/FuturaStd-Light.woff') format('woff');
   font-weight: 300;
@@ -117,25 +114,25 @@ $fa-font-display: block !default;
 }
 
 @font-face {
-  font-family: 'Futura heavy';
+  font-family: 'Futura';
   src: url('/fonts/FuturaStd-Heavy.woff2') format('woff2'),
       url('/fonts/FuturaStd-Heavy.woff') format('woff');
-  font-weight: 900;
+  font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Futura 800 Obl';
+  font-family: 'Futura';
   src: url('/fonts/FuturaStd-ExtraBoldOblique.woff2') format('woff2'),
       url('/fonts/FuturaStd-ExtraBoldOblique.woff') format('woff');
-  font-weight: 800;
+  font-weight: 900;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Futura light obl';
+  font-family: 'Futura';
   src: url('/fonts/FuturaStd-LightOblique.woff2') format('woff2'),
       url('/fonts/FuturaStd-LightOblique.woff') format('woff');
   font-weight: 300;
@@ -144,7 +141,7 @@ $fa-font-display: block !default;
 }
 
 @font-face {
-  font-family: 'Futura medium';
+  font-family: 'Futura';
   src: url('/fonts/FuturaStd-Medium.woff2') format('woff2'),
       url('/fonts/FuturaStd-Medium.woff') format('woff');
   font-weight: 500;
@@ -153,16 +150,16 @@ $fa-font-display: block !default;
 }
 
 @font-face {
-  font-family: 'Futura heavy obl';
+  font-family: 'Futura';
   src: url('/fonts/FuturaStd-HeavyOblique.woff2') format('woff2'),
       url('/fonts/FuturaStd-HeavyOblique.woff') format('woff');
-  font-weight: 900;
+  font-weight: 600;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Futura medium obl';
+  font-family: 'Futura';
   src: url('/fonts/FuturaStd-MediumOblique.woff2') format('woff2'),
       url('/fonts/FuturaStd-MediumOblique.woff') format('woff');
   font-weight: 500;

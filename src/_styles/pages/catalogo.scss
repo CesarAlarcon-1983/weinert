@@ -57,26 +57,86 @@
     }
 
     &__heading {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 1px solid $lightGray;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid $lightGray;
+      
+      i {
+        color: $darkBeige;
+
+        @include mq(md) {
+          display: none;
+        }
+      }
+    }
+
+    &__filters {
+      @include trans;
+
+      background: $white;
+      z-index: 100;
+      position: fixed;
+      left:0;
+      width: 90%;
+      top:50px;
+      bottom: 0;
+      transform: translateX(-100%);
+      padding-top: 30px;
+
+      &.-open {
+        transform: translateX(0);
+        box-shadow: 10px 0 10px rgba(0,0,0,.15);
+        overflow: auto;
+      }
+
+      @include mq(md) {
+        padding-top: 0;
+        top: 0;
+        position: relative;
+        width: 25%;
+        transform: translateX(0);
+      }
+
+      .js-catalogoFilterClose {
+        @include trans;
+        background: $darkBeige;
+        padding: 10px 13px;
+        color: $white;
+        position: absolute;
+        right:0;
+        border: none;
+        top: 0;
+
+        &:focus {
+          outline: none;
+        }
+
+        @include mq(md) {
+          display: none;
+        }
+      }
     }
 
     &__title {
         font-family: $titleFont;
         text-transform: uppercase;
-        font-size: 40px;
+        font-size: 20px;
         font-weight: 100;
         color: $darkGray;
         margin: 0;
         padding: 20px 0;
         position: relative;
+
+        @include mq(md) {
+          font-size: 40px;
+        }
     }
 
     &__filter-group {
         display: flex;
         align-items: center;
+        justify-content: space-between;
         position: relative;
 
         &:after {
@@ -95,17 +155,30 @@
 
     &__filter-text {
         color: $darkGray;
-        margin-right: 20px;
+        font-size: 14px;
+        margin-right: 10px;
+
+        @include mq(md) {
+          margin-right: 20px;
+          font-size: 16px;
+        }
     }
 
     &__filter-input {
         height: 40px;
         border: 1px solid $lightGray;
         color: $darkGray;
-        width: 150px;
+        width: 100px;
         padding: 0 10px;
         -webkit-appearance: none;
         cursor: pointer;
+        font-family: $mainFont;
+        font-size: 14px;
+
+        @include mq(md) {
+          width: 150px;
+          font-size: 16px;
+        }
     }
 
     &__container {

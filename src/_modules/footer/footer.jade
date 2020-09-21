@@ -32,9 +32,10 @@ footer.footer
             div.footer__newsletter
               h3.footer__newsletter__title Weinert News
               p.footer__newsletter__text Receba descontos especiais e ofertas exclusivas
-              div.footer__newsletter__input-group
+              form.footer__newsletter__input-group
                 input.footer__newsletter__input(placeholder="Seu email")
-                i.fa.fa-arrow-right
+                button.footer__newsletter__submit
+                  
             div.footer__social
               h2.footer__social__title Seguir em
               ul.footer__social__list
@@ -79,5 +80,15 @@ footer.footer
               i.far.fa-credit-card
               p.footer__group__text Até 3 vezes sem juros
             div.footer__group__wrapper
-              i.fas.fa-box-open
+              img(src='/images/box-open.svg')
               p.footer__group__text Monitoramento de entregas. Satisfacao garantizada
+
+  .footer__disclaimer
+    .container
+      .row
+        .col-24
+          .footer__disclaimer-content
+            p © Weinert 2020 | A venda de álcool para menores de 18 anos é proibida
+            .footer__disclaimer-content__legal
+              a(href="/privacy") Políticas de privacidade
+              a(href="/terms-conditions") Termos e Condições

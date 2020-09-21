@@ -19,7 +19,7 @@ var Header = function() {
     searchButton.on('click', function() {
         searchbar.toggleClass('-open');
         searchButton.toggleClass('-open');
-    })
+    });
 
     //Shop cart Logic
     const shopCartIcon = $('.header__cart');
@@ -29,12 +29,12 @@ var Header = function() {
     shopCartIcon.on('click', function() {
         shopCartContainer.addClass('-open');
         body.addClass('-hideOverflow');
-    })
+    });
 
     shopCartCloseIcon.on('click', function() {
         shopCartContainer.removeClass('-open');
         body.removeClass('-hideOverflow');
-    })
+    });
 
     //Catalogo Banner Logic
 
@@ -61,14 +61,26 @@ var Header = function() {
 
     accordionButton.on('click', function() {
         accordion.toggleClass('-closed');
-    })
+    });
 
     //Privacy accordion logic
     var privacyAccordionItem = $('.privacy__accordion-item');
 
     privacyAccordionItem.on('click', function() {
         $(this).toggleClass('-open');
-    })
+    });
+
+    $('.js-fav').on('click', function(){
+      $(this).toggleClass('-active');
+    });
+
+    $('.js-catalogoFilter').on('click', function() {
+      $('.catalogo__filters').addClass('-open');
+    });
+
+    $('.js-catalogoFilterClose').on('click', function() {
+      $('.catalogo__filters').removeClass('-open');
+    });
 };
 
 module.exports = Header;

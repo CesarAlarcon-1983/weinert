@@ -1,17 +1,18 @@
 mixin product(product)
   div.product
     div.product__container
-      div.product__favorite
+      div.product__favorite.js-fav
         i.fa.fa-heart
         i.fa.fa-heart-o
-      div.product__image
+      a(href="/producto").product__image
         img(src=product.url)
       div.product__content
-        h4.product__title=product.title
-        span.product__qty=product.qty
-        div.product__prices
-          span.product__price=product.price
-          span.product__regular-price=product.regular_price
+        a(href="/producto")
+          h4.product__title=product.title
+          span.product__qty=product.qty
+          div.product__prices
+            span.product__price=product.price
+            span.product__regular-price=product.regular_price
         button.product__button
           span.product__button-text Adicionar
           i.fa.fa-shopping-bag

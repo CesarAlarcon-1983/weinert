@@ -17,16 +17,26 @@
   // }
 
   &__top-row {
+    @include trans;
+
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    justify-content: space-between;
-    align-items: center;
-    height: 40px;
-    display: none;
-
+    position: fixed;
+    bottom: 30px;
+    left:30px;
+    z-index: 10000;
+    opacity: 0;
+    transform: translateX(-100%);
+    
     @include mq(md) {
+      height: 40px;
+      justify-content: space-between;
+      align-items: center;
       display: flex;
+      position: static;
+      transform: translateX(0);
+      opacity: 1;
     }
 
     &:after {
@@ -37,13 +47,31 @@
       right: -100%;
       height: 1px;
       background: $lightGray;
+      display: none;
+
+      @include mq(md) {
+        display: block;
+      }
     }
   }
 
   &__support-mail {
+    margin-bottom: 10px;
+    
+    @include mq(md) {
+      margin-bottom: 0;
+    }
+
     &__text {
       margin-right: 10px;
+      margin-bottom: 5px;
       font-size: 14px;
+      display: block;
+
+      @include mq(md) {
+        display: inline;
+        margin-bottom: 0;
+      }
     }
 
     i {
@@ -62,11 +90,19 @@
 
   &__alt-nav {
     &__list {
-      display: flex;
+      
+      @include mq(md) {
+        display: flex;
+      }
     }
 
     &__item {
-      margin-left: 20px;
+      margin-bottom: 10px;
+
+      @include mq(md) {
+        margin-left: 20px;
+        margin-bottom: 0;
+      }
 
       a {
         text-decoration: none;
@@ -252,17 +288,19 @@
   &__main-nav {
     @include trans;
 
-    display: flex;
     position: fixed;
-    top: 0;
+    top: 50px;
     left: 0;
+    bottom:0;
     width: 100%;
-    height: 100vh;
     background: $white;
     transform: translateX(-110%);
     z-index: 1000;
+    padding: 30px;
     
     @include mq(md) {
+      display: flex;
+      padding: 0;
       background: transparent;
       position: relative;
       width: 90%;
@@ -271,27 +309,43 @@
       flex-grow: 2;
       justify-content: space-between;
       align-items: center;
+      top: 0;
     }
 
     &__list {
-      display: flex;
-      justify-content: space-evenly;
-      width: 40%;
+      
+      @include mq(md) {
+        display: flex;
+        justify-content: space-evenly;
+        width: 40%;
+      }
     }
 
     &__item {
-      &:hover {
-        a {
-          color: $darkBeige;
-        }
-      }
+      margin-bottom: 30px;
 
+      @include mq(md) {
+        margin-bottom: 0;
+      }
+      
+      
       a {
         @include trans;
         text-decoration: none;
         font-family: $mainFont;
         text-transform: uppercase;
         color: $darkestGray;
+        font-weight: 500;
+        font-size: 18px;
+        letter-spacing: 1.1px;
+
+        @include mq(md) {
+          font-size: 14px;
+        }
+
+        &:hover {
+          color: $darkBeige;
+        }
       }
     }
   }
@@ -354,22 +408,27 @@
 
     &__container {
       @include trans;
-      padding: 80px;
+      padding: 20px;
       position: absolute; 
       top: 0;
       right: 0;
       height: 100vh;
-      width: 50%;
+      width: 90%;
       background: $white;
       z-index: 1002;
       transform: translateX(100%);
       opacity: 0;
+
+      @include mq(md) {
+        width: 50%;
+        padding: 80px;
+      }
     }
 
     &__close-button {
       position: absolute;
-      top: 40px;
-      right: 40px;
+      top: 10px;
+      right: 10px;
       height: 40px;
       width: 40px;
       background: transparent;
@@ -377,6 +436,13 @@
       outline: none;
       cursor: pointer;
       transform: rotate(45deg);
+
+      @include mq(md) {
+        top: 40px;
+        right: 40px;
+        height: 40px;
+        width: 40px;
+      }
 
       &:after {
         content: '';
@@ -404,11 +470,15 @@
     &__title {
       margin: 0;
       margin-bottom: 20px;
-      font-size: 40px;
+      font-size: 21px;
       font-weight: 100;
       text-transform: uppercase;
       font-family: $titleFont;
       color: $darkGray;
+
+      @include mq(md) {
+        font-size: 40px;
+      }
     }
 
     &__heading {
@@ -420,9 +490,13 @@
     }
 
     &__heading-title {
-      font-size: 24px;
+      font-size: 16px;
       color: $darkGray;
       text-transform: uppercase;
+
+      @include mq(md) {
+        font-size: 24px;
+      }
     }
 
     &__accordion {
@@ -445,64 +519,77 @@
               padding: 0;
           }
       }
-  }
-
-  &__accordion-item {
-      @include trans;
-
-      width: 100%;
-      padding: 20px 0;
-      border-bottom: 1px solid $lightGray;
-  }
-
-  &__subtotals {
-      padding: 20px 0;
-      border-bottom: 1px solid $lightGray;
-  }
-
-  &__subtotal,
-  &__envio,
-  &__total {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      
-      &__text,
-      &__number {
-          font-size: 18px;
-          color: $darkGray;
-      }
-
-      &__text {
-          text-transform: uppercase;
-      }
-
-      &__number {
-          font-size: 16px;
-      }
     }
 
-    &__subtotal {
-        margin-bottom: 20px;
-    }
+    &__accordion-item {
+        @include trans;
 
-    &__total {
+        width: 100%;
         padding: 20px 0;
+        border-bottom: 1px solid $lightGray;
+    }
 
+    &__subtotals {
+        padding: 20px 0;
+        border-bottom: 1px solid $lightGray;
+    }
+
+    &__subtotal,
+    &__envio,
+    &__total {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
         &__text,
         &__number {
-            font-size: 20px;
+            font-size: 14px;
             color: $darkGray;
+
+            @include mq(md) {
+              font-size: 18px;
+            }
+        }
+
+        &__text {
+            text-transform: uppercase;
         }
 
         &__number {
-            color: $darkBeige;
+            font-size: 14px;
+
+            @include mq(md) {
+              font-size: 16px;
+            }
         }
-    }
+      }
+
+      &__subtotal {
+          margin-bottom: 20px;
+      }
+
+      &__total {
+          padding: 20px 0;
+
+          &__text,
+          &__number {
+              font-size: 20px;
+              color: $darkGray;
+          }
+
+          &__number {
+              color: $darkBeige;
+          }
+      }
 
     &__button {
         @include iconedButton('fill', $darkBeige, $white);
         margin-bottom: 20px;
+        text-decoration: none;
+
+        &:hover {
+          color: $white;
+        }
     }
   }
 
@@ -562,6 +649,12 @@
 
     #{$h}__main-nav {
       transform: translateX(0);
+    }
+
+    #{$h}__top-row {
+      display: block;
+      transform: translateX(0);
+      opacity: 1;
     }
   }
 }
