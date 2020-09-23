@@ -11,13 +11,13 @@ block content
   main.product-detail
     div.product-detail__container
       div.product-detail__product-content
-        +slider('product-detail__product-slider', 'normal')
-          div.product-detail__product-slide
-            span.product-detail__product-comment Home | Carrascal Corte clásico 2017 6X750ML
-            img(src="/images/producto/prod-7.png")
-          div.product-detail__product-slide
-            span.product-detail__product-comment Home | Carrascal Chardonnay 6X750ML
-            img(src="/images/home/linha-carrascal-3.png")
+        div.product-detail__product-slider-container
+          span.product-detail__product-breadcrumb <a href="/">Home</a> | Carrascal Corte clásico 2017 6X750ML
+          +slider('product-detail__product-slider', 'normal')
+            div.product-detail__product-slide
+              img(src="/images/producto/prod-7.png")
+            div.product-detail__product-slide
+              img(src="/images/home/linha-carrascal-3.png")
         div.product-detail__product-description
           h1.product-detail__product-description__title Carrascal Corte clásico 2017
           span.product-detail__product-description__qty 6 X 750 ML
@@ -81,7 +81,7 @@ block content
                   img(src="/images/producto/icon-4.png")
                 div.product-detail__product-info__text-wrapper
                   h3.product-detail__product-info__title Potencial de envelhecimento
-                  p.product-detail__product-info__text ideal para beber agora ou guardar áte 2023
+                  p.product-detail__product-info__text Ideal para beber agora ou guardar áte 2023
               div.product-detail__product-info__group
                 div.product-detail__product-info__icon
                   img(src="/images/producto/icon-2.png")
@@ -99,7 +99,7 @@ block content
                   img(src="/images/producto/icon-3.png")
                 div.product-detail__product-info__text-wrapper
                   h3.product-detail__product-info__title Tipo de vinho
-                  p.product-detail__product-info__text tinto
+                  p.product-detail__product-info__text Tinto
               div.product-detail__product-info__group
                 div.product-detail__product-info__icon
                   img(src="/images/producto/icon-6.png")

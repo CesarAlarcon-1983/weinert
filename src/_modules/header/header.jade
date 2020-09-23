@@ -23,16 +23,14 @@ header.header
           div.header__searchbar
             input.header__searchbar__input
             a.header__searchbar__button(href="#")
-              i.fas.fa-search
+              img(src="/images/search.svg")
           a.header__logo-mobile(href="/")
             img(src="/images/weinert.png")
           div.header__wrapper
             div.header__search-icons
-                i.fas.fa-search.-js-search
+                img.-js-search(src="/images/search.svg")
                 i.fas.fa-times.-js-close
             nav.header__main-nav
-              a.header__logo(href="/")
-                img(src="/images/weinert.png")
               ul.header__main-nav__list
                 li.header__main-nav__item
                   a(href="/catalogo") Vinho
@@ -40,6 +38,8 @@ header.header
                   a(href="#") 90+ Pontos
                 li.header__main-nav__item
                   a(href="#") Acessórios
+              a.header__logo(href="/")
+                img(src="/images/weinert.png")
               ul.header__main-nav__list
                 li.header__main-nav__item
                   a(href="/contacto") Contate-nos

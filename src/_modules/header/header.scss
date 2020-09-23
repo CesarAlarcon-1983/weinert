@@ -68,6 +68,7 @@
       font-size: 14px;
       display: block;
       font-weight: 500;
+      color: $darkestGray;
 
       @include mq(md) {
         display: inline;
@@ -161,7 +162,7 @@
       border: none;
       border-radius: 5px;
       outline: none;
-      color: $darkGray;
+      color: $darkestGray;
     }
 
     &.-open {
@@ -189,9 +190,8 @@
       @include mq(md) {
       }
 
-      i {
-        font-size: 20px;
-        color: $darkGray;
+      img {
+        width: 20px;
       }
     }
   }
@@ -213,20 +213,20 @@
     cursor: pointer;
 
     @include mq(md) {
-      width: 5%;
     }
 
-    i {
+    i, img {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate3d(-50%, -50%, 0);
-      color: $darkGray;
+      color: $darkestGray;
       font-size: 20px;
     }
 
     .-js-search {
       @include trans;
+      width: 20px;
     }
 
     .-js-close {
@@ -261,25 +261,20 @@
   }
 
   &__logo {
-    position: absolute;
     height: 60%;
     width: auto;
     overflow: hidden;
-    top: 50%;
-    left: 0;
-    transform: translate3d(0, -50%, 0);
     display: flex;
     justify-content: center;
     align-items: center;
     display: none;
     
     @include mq(md) {
-      left: 50%;
-      transform: translate3d(-50%, -50%, 0);
       width: 20%;
       display: flex;
       justify-content: center;
       align-items: center;
+      // height: 60%;
     }
 
     img {
@@ -309,25 +304,37 @@
       height: 100%;
       transform: translateX(0);
       flex-grow: 2;
-      justify-content: space-between;
+      justify-content: space-evenly;
       align-items: center;
       top: 0;
+      height: 100%;
     }
 
     &__list {
       
       @include mq(md) {
         display: flex;
-        justify-content: space-evenly;
+        justify-content: center;
         width: 40%;
+      }
+
+      &:first-of-type {
+        justify-content: flex-end;
+      }
+
+      &:last-of-type {
+        justify-content: flex-start;
       }
     }
 
     &__item {
       margin-bottom: 30px;
+      display: flex;
+      align-items: center;
 
       @include mq(md) {
         margin-bottom: 0;
+        margin: 0 20px;
       }
       
       
@@ -455,7 +462,7 @@
         transform: translate3d(-50%, -50%, 0);
         width: 30px;
         height: 2px;
-        background: $darkGray;
+        background: $darkestGray;
       }
 
       &:before {
@@ -466,7 +473,7 @@
         transform: translate3d(-50%, -50%, 0);
         height: 30px;
         width: 2px;
-        background: $darkGray;
+        background: $darkestGray;
       }
     }
     
@@ -477,7 +484,7 @@
       font-weight: 100;
       text-transform: uppercase;
       font-family: $titleFont;
-      color: $darkGray;
+      color: $darkestGray;
 
       @include mq(md) {
         font-size: 40px;
@@ -494,7 +501,7 @@
 
     &__heading-title {
       font-size: 16px;
-      color: $darkGray;
+      color: $darkestGray;
       text-transform: uppercase;
 
       @include mq(md) {
@@ -547,7 +554,7 @@
         &__text,
         &__number {
             font-size: 14px;
-            color: $darkGray;
+            color: $darkestGray;
 
             @include mq(md) {
               font-size: 18px;
@@ -577,7 +584,7 @@
           &__text,
           &__number {
               font-size: 20px;
-              color: $darkGray;
+              color: $darkestGray;
           }
 
           &__number {
@@ -589,6 +596,11 @@
         @include iconedButton('fill', $darkBeige, $white);
         margin-bottom: 20px;
         text-decoration: none;
+        height: 50px;
+        font-size: 16px;
+        font-weight: 400;
+        letter-spacing: 2px;
+
 
         &:hover {
           color: $white;

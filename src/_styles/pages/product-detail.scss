@@ -11,12 +11,21 @@
         }
     }
 
+    &__product-slider-container { 
+      position: relative;
+      width: 100%;
+      background: $lightBeige;
+
+      @include mq(md) {
+        width: 50%;
+      }
+    }
+
     &__product-slider {
-        background: $lightBeige;
         width: 100%;
 
         @include mq(md) {
-            width: 50%;
+            width: 100%;
         }
 
         .slick-dots {
@@ -90,7 +99,7 @@
         }
     }
 
-    &__product-comment {
+    &__product-breadcrumb {
         position: absolute;
         top: 40px;
         left: 50%;
@@ -100,13 +109,21 @@
         width: 100%;
         text-align: center;
         padding: 0 10px;
-
+        font-size: 14px;
+        font-weight: 400;
+  
         @include mq(md) {
           padding: 0;
           width: auto;
           text-align: left;
           left: 60px;
+          font-size: 16px;
           transform: translate3d(0, 0, 0);
+        }
+
+        a {
+          text-decoration: none;
+          color: $darkGray;
         }
     }
 
@@ -115,6 +132,7 @@
 
       @include mq(md) {
         padding: 80px;
+        width: 50%;
       }
 
         &__title {
@@ -125,9 +143,10 @@
             max-width: 70%;
             margin: 0;
             margin-bottom: 20px;
+            font-weight: 400;
 
             @include mq(md) {
-              font-size: 40px;
+              font-size: 32px;
             }
         }
 
@@ -139,7 +158,7 @@
             display: block;
 
             @include mq(md) {
-              font-size: 26px;
+              font-size: 18px;
             }
         }
     }
@@ -161,12 +180,12 @@
             margin-left: 20px;
 
             @include mq(md) {
-              font-size: 26px;
+              font-size: 20px;
             }
         }
 
         @include mq(md) {
-          font-size: 30px;
+          font-size: 22px;
         }
     }
 
@@ -223,8 +242,6 @@
         }
     }
 
-
-
     &__product-favorite {
         height: 50px;
         display: flex;
@@ -244,7 +261,6 @@
         margin-right: 3px;
         margin-left: 0;
         padding: 0 40px;
-        border: none;
 
         @include mq(md) {
           margin-right: 3px;
@@ -261,18 +277,20 @@
     }
 
     &__favorite {
-        @include iconedButton('fill', $darkBeige, $white);
         @include trans;
+        background: $darkBeige;
+        width: 50px;
         border: none;
+
+        i {
+          color: $white;
+          @include trans;
+        }
 
         &:hover {
             i {
                 color: $red;
             }
-        }
-
-        i {
-            @include trans;
         }
     }
 
@@ -466,13 +484,21 @@
             margin-bottom: 10px;
             text-transform: uppercase;
             color: $darkGray;
-            font-weight: 100;
-        }
+            font-weight: 400;
+
+            @include mq(md) {
+              font-size: 20px;
+            }
+        } 
 
         &__text {
             font-size: 18px;
             margin: 0;
             color: $darkGray;
+            font-weight: 400;
+            @include mq(md) {
+              font-size: 16px;
+            }
         }
     }
 }

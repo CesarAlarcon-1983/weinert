@@ -39,11 +39,15 @@
     }
 
     &__slide-image {
-      height: 100%;
-      width: 100%;
       overflow: hidden;
       display: flex;
+      height: 100%;
       justify-content: center;
+
+      @include mq(md) {
+        height: auto;
+        display: block;
+      }
 
       img {
         height: 100%;
@@ -81,11 +85,12 @@
       text-align: center;
       margin: 0;
       margin-bottom: 40px;
+      font-weight: 400;
       
       @include mq(md) {
         font-size: 24px;
         margin-bottom: 80px;
-        line-height: 1.6;
+        line-height: 1.4;
       }
     }
 
@@ -339,7 +344,7 @@
       font-weight: 500;
 
       @include mq(md) {
-        font-size: 30px;
+        font-size: 26px;
       }
     }
 
@@ -354,6 +359,7 @@
       color: $darkBeige;
       font-size: 24px;
       margin-right: 20px;
+      font-weight: 500;
     }
 
     &__destacado-regular-price {
@@ -364,24 +370,6 @@
 
     &__destacado-button {
       @include iconedButton('fill', $white, $darkGray);
-      // width: 70%;
-      // margin-right: auto;
-      // margin-left: auto;
-      // display: flex;
-      // justify-content: center;
-      // align-items: center;
-      // background: $white;
-      // border: none;
-      // padding: 15px 0;
-
-      // @include mq(md) {
-      //   width: 60%;
-      // }
-
-      // i {
-      //   color: $darkGray;
-      //   font-size: 18px;
-      // }
     }
 
     &__button-text {
@@ -456,16 +444,14 @@
     }
 
     &__top-destacado {
-      height: 45vh;
+      // height: 45vh;
       background: $midBeige;
       position: relative;
       overflow: hidden;
 
       .-background {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
+        width: 100%;
+        display: block;
       }
 
       &--left {
